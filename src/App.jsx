@@ -9,15 +9,14 @@ const DOCTOR_AVATAR = 'https://cdn-icons-png.flaticon.com/512/3429/3429149.png';
 // ------------------------------------------------------------------
 
 const GIFT_IMAGES = {
-  chocolate: CUSTOM_CHOCOLATE_IMAGE,
-  redbull: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=800&q=80',
-  candle: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800&q=80',
-  nailcare: 'https://images.unsplash.com/photo-1632512903332-9cb770985223?w=800&q=80', // Nail Care / Polish
-  anghami: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80',
-  bracelet: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80', 
-  diamond: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80', 
+  chocolate: 'https://www.galaxychocolate.co.uk/sites/g/files/fnmzdf211/files/2021-02/Galaxy-Collection-Header-21x9.jpg',
+  redbull: 'https://ae01.alicdn.com/kf/Sdedaa144ec7646a8a402eb8f79c356bbC.jpg',
+  candle: 'https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/890535/5.jpg?9878',
+  nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
+  anghami: 'https://eshop.bh.zain.com/sites/default/files/ImagesDir/2024-01/Anghami1648x890-Dec-2-04.jpg',
+  Bracelet: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80', 
+  diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
   notebook: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80',
-  final: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80'
 };
 
 const DUA_LIST = [
@@ -36,55 +35,55 @@ const EXAMS_DATA = [
     id: 1,
     date: '2025-12-29',
     displayDate: '29 ديسمبر',
-    subject: 'Medicinal (HARD)',
-    giftName: 'Chocolate Box',
+    subject: 'Medicinal ',
+    giftName: 'Scented Candle 🪔',
     totalPieces: 3,
     codes: ['start', 'focus', 'power'],
-    imageUrl: GIFT_IMAGES.chocolate,
-    description: 'بداية قوية محتاجة طاقة وسعادة 🍫',
-    gameType: 'memory'
+    imageUrl: GIFT_IMAGES.candle,
+    description: 'بداية قوية بس عايزين نهدي التوتر شوية 🪔',
+    gameType: 'catcher'
   },
   {
     id: 2,
     date: '2026-01-01',
     displayDate: '1 يناير',
-    subject: 'Drug Design (EASY)',
-    giftName: 'Scented Candle',
+    subject: 'Drug Design ',
+    giftName: 'Chocolate 🍫',
     totalPieces: 2,
     codes: ['relax', 'light'],
-    imageUrl: GIFT_IMAGES.candle,
-    description: 'شمعة بريحة هادية عشان تروقي وتفصلي 🕯️',
+    imageUrl: GIFT_IMAGES.Chocolate,
+    description: 'الA+ في جيبك كدة كدة يعني  😌',
     gameType: 'diamond'
   },
   {
     id: 3,
     date: '2026-01-04',
     displayDate: '4 يناير',
-    subject: 'Drug Info (EASY)',
-    giftName: 'Anghami Plus',
+    subject: 'Drug Info ',
+    giftName: 'Anghami Plus 🎧',
     totalPieces: 2,
     codes: ['music', 'play'],
     imageUrl: GIFT_IMAGES.anghami,
-    description: 'عشان تسمعي البلاي ليست بتاعتنا براحتك 🎧',
-    gameType: 'catcher'
+    description: 'عشان تسمعي البلاي ليست بتاعتك براحتك 🎧',
+    gameType: 'memory'
   },
   {
     id: 4,
     date: '2026-01-08',
     displayDate: '8 يناير',
-    subject: 'Hospital (HARD)',
-    giftName: 'Red Bull Cover',
+    subject: 'Hospital ',
+    giftName: 'Red Bull Cover📱',
     totalPieces: 3,
     codes: ['wings', 'energy', 'fly'],
     imageUrl: GIFT_IMAGES.redbull,
-    description: 'عشان تفضلي فايقة ومركزة.. ولعت 🔥',
+    description: 'معروفة RedBull علشان نفوق 🔥',
     gameType: 'shooter'
   },
   {
     id: 5,
     date: '2026-01-11',
     displayDate: '11 يناير',
-    subject: 'Clinical Research (EASY)',
+    subject: 'Clinical Research ',
     giftName: 'Simple Bracelet',
     totalPieces: 2,
     codes: ['hand', 'together'],
@@ -96,7 +95,7 @@ const EXAMS_DATA = [
     id: 6,
     date: '2026-01-15',
     displayDate: '15 يناير',
-    subject: 'Quality Control (HARD)',
+    subject: 'Quality Control)',
     giftName: 'Diamond Painting',
     totalPieces: 3,
     codes: ['art', 'color', 'calm'],
@@ -120,13 +119,13 @@ const EXAMS_DATA = [
     id: 8,
     date: '2026-01-22',
     displayDate: '22 يناير',
-    subject: 'Drug Marketing (EASY)',
-    giftName: 'الخروجة الكبيرة',
+    subject: 'Drug Marketing ',
+    giftName: 'Ice Shapes',
     totalPieces: 2,
     codes: ['freedom', 'party'],
     imageUrl: GIFT_IMAGES.final,
     isBigGift: true,
-    description: 'مبروك التخرج من الترم! يلا نحتفل 🎉',
+    description: 'مبروك التخرج من الترم!, لازم تحتفلي ب ايس كوفي بقي 🎉',
     gameType: 'catcher'
   }
 ];
