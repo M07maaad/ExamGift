@@ -153,7 +153,7 @@ const getTimeRemaining = (endtime) => {
 const MusicPlayer = () => {
   const [playing, setPlaying] = useState(false);
   // رابط موسيقى بيانو هادئة (تشبه ستايل أنغام - سيدي وصالك Instrumental Vibe)
-  const musicUrl = "https://cdn.pixabay.com/download/audio/2022/03/10/audio_5b822002aa.mp3?filename=piano-moment-11345.mp3"; 
+  const musicUrl = "https://serv100.albumaty.com/2024/Albumaty.Com_angham_khlyk_maaha.mp3"; 
   const [audio] = useState(new Audio(musicUrl));
 
   useEffect(() => {
