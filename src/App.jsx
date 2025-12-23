@@ -239,8 +239,6 @@ const DuaModal = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 backdrop-blur-md animate-fadeIn p-4">
       <div className="bg-gradient-to-b from-indigo-900 to-purple-900 rounded-3xl p-6 md:p-8 max-w-sm w-full text-center shadow-2xl border border-yellow-500/30 relative overflow-hidden">
-        <div className="absolute top-2 left-4 text-yellow-200 opacity-50">✨</div>
-        <div className="absolute bottom-4 right-4 text-yellow-200 opacity-50">✨</div>
         <button onClick={onClose} className="absolute top-4 right-4 text-white/50 hover:text-white"><X size={24} /></button>
         <div className="w-16 h-16 md:w-20 md:h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(234,179,8,0.3)]"><Moon className="text-yellow-400 w-8 h-8 md:w-10 md:h-10 fill-current" /></div>
         <h2 className="text-xl md:text-2xl font-bold text-yellow-100 mb-4 md:mb-6 font-serif">رسالة طمأنينة</h2>
@@ -600,7 +598,15 @@ const JigsawPiece = ({ index, totalPieces, isUnlocked, imageUrl, onClick }) => {
         {!isUnlocked && <path d={d} fill="black" opacity="0.3" transform="translate(2, 2)" />}
         <g clipPath={`url(#clip-${index})`}>
           <rect x="-50" y="-50" width="300" height="300" fill="#2a2a2a" />
-          <image href={imageUrl} x={imgX} y={imgY} width={imgW} height={imgH} preserveAspectRatio="none" style={{ filter: isUnlocked ? 'none' : 'blur(1px) grayscale(0.8) brightness(0.8)', transition: 'filter 0.5s ease' }} />
+          <image 
+            href={imageUrl} 
+            x={imgX} 
+            y={imgY} 
+            width={imgW} 
+            height={imgH} 
+            preserveAspectRatio="none" 
+            style={{ opacity: isUnlocked ? 1 : 0, transition: 'opacity 0.5s ease' }} 
+          />
           {isUnlocked && <rect x="-50" y="-50" width="300" height="300" fill="white" opacity="0.1" className="animate-pulse" />}
         </g>
         <path d={d} fill="none" stroke="white" strokeWidth="1" strokeOpacity={isUnlocked ? "0" : "0.5"} filter={!isUnlocked ? "url(#bevel)" : ""} />
