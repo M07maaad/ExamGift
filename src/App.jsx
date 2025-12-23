@@ -521,7 +521,7 @@ const DailyTodoList = () => {
         <button type="submit" className="bg-pink-500 hover:bg-pink-600 text-white p-2 rounded-xl transition-colors"><Plus size={24} /></button>
       </form>
       <div className="space-y-2 max-h-[200px] overflow-y-auto pr-2 custom-scrollbar">
-        {tasks.length === 0 && <div className="text-center text-white/30 text-sm py-4 italic">لسة مفيش مهام.. اكتبي خطة اليوم يا بطلة 💪</div>}
+        {tasks.length === 0 && <div className="text-center text-white/30 text-sm py-4 italic">لسة مفيش مهام.. اكتبي خطة اليوم يا دكتوووورة 💪</div>}
         {tasks.map(task => (
           <div key={task.id} className={`flex items-center justify-between p-3 rounded-xl border transition-all duration-300 ${task.completed ? 'bg-green-500/10 border-green-500/30' : 'bg-white/5 border-white/5'}`}>
             <div className="flex items-center gap-3 overflow-hidden">
@@ -682,7 +682,7 @@ export default function App() {
 
             </div>
             {!isCompleted && (
-              <div className="mt-8"><PuzzleInput pieceNumber={unlockedCount + 1} onUnlock={handleUnlock} /><p className="text-center text-white/30 text-xs mt-3 font-light">* كود الهدية معاكي بعد ما تخلصي المذاكرة</p></div>
+              <div className="mt-8"><PuzzleInput pieceNumber={unlockedCount + 1} onUnlock={handleUnlock} /><p className="text-center text-white/30 text-xs mt-3 font-light"> ابعتيلي بعد ما تخلصي مذاكرة علشان اقولك الكود 😉</p></div>
             )}
             {!isCompleted && <DailyTodoList />}
           </div>
