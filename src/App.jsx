@@ -532,7 +532,7 @@ const DailyTodoList = () => {
           </div>
         ))}
       </div>
-      {allCompleted && <div className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-xl text-center text-green-200 text-sm font-bold animate-pulse">عاش يا وحش الكون! إنتي قدها 🌟</div>}
+      {allCompleted && <div className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-xl text-center text-green-200 text-sm font-bold animate-pulse">عاااااش اوي ! افتكري دايما، إنتي قدها 🌟</div>}
     </div>
   );
 };
