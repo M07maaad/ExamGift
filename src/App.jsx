@@ -5,7 +5,7 @@ import confetti from 'canvas-confetti';
 // ------------------------------------------------------------------
 // 📸 إعدادات الصور
 const CUSTOM_CHOCOLATE_IMAGE = 'https://images.unsplash.com/photo-1511381939415-e44015466834?w=800&q=80';
-const DOCTOR_AVATAR = 'https://cdn-icons-png.flaticon.com/512/3429/3429149.png'; 
+const DOCTOR_AVATAR = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiJg9BTsMS0PNY0M3Zh3dy61p4qxUDvGQ2jpbBgFA53-Enw6QMqEZU19deLixbr3_TyLx4pOhnu6rHvrWLz22OlMXH7NWb7Xm4CKQ9igtKWDL0pyJikpSDo2-UudeAtslpqD6RJRO9Z8a2kPbNjuKPuJYvDnL6pxbeqAgewTeiyhDXhlJ2vb1_w38TtY3Lx/s1600/1fa56531-a5cd-4c8b-8c3d-bdda090d363b.png'; 
 // ------------------------------------------------------------------
 
 const GIFT_IMAGES = {
@@ -14,7 +14,7 @@ const GIFT_IMAGES = {
   candle: 'https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/890535/5.jpg?9878',
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
   anghami: 'https://eshop.bh.zain.com/sites/default/files/ImagesDir/2024-01/Anghami1648x890-Dec-2-04.jpg',
-  Sadaka: 'https://vectorseek.com/wp-content/uploads/2023/09/Children-Cancer-Hospital-57357-Logo-Vector.svg-.png', 
+  Sadaka: 'https://i.ytimg.com/vi/0qFpDGmgqlU/sddefault.jpg', 
   diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
   iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
