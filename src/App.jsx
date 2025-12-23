@@ -87,7 +87,7 @@ const EXAMS_DATA = [
     giftName: 'Sadaka',
     totalPieces: 2,
     codes: ['good', 'forever'],
-    imageUrl: GIFT_IMAGES.57357,
+    imageUrl: GIFT_IMAGES.Sadaka,
     description: 'لازم شوية ثواب بردو علشان نعدي صافي 😂 ',
     gameType: 'memory'
   },
