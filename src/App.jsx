@@ -190,12 +190,12 @@ const MusicPlayer = () => {
   return (
     <button 
       onClick={toggleMusic}
-      className={`fixed top-4 left-4 z-50 p-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 
-      ${playing ? 'bg-pink-500 text-white w-auto pr-4' : 'bg-white/80 text-pink-500 w-12 hover:w-40 group overflow-hidden'}`}
+      className={`fixed top-4 left-4 z-50 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 
+      ${playing ? 'bg-pink-500 text-white w-auto pr-3 md:pr-4' : 'bg-white/80 text-pink-500 w-10 h-10 md:w-12 md:h-12 justify-center group overflow-hidden'}`}
     >
-      {playing ? <Pause size={20} /> : <Music size={20} />}
-      <span className={`whitespace-nowrap overflow-hidden transition-all duration-300 text-sm font-bold ${playing ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-        {playing ? "Pause Angham Vibe" : "Play Angham Vibe"}
+      {playing ? <Pause size={18} /> : <Music size={20} />}
+      <span className={`whitespace-nowrap overflow-hidden transition-all duration-300 text-xs md:text-sm font-bold ${playing ? 'opacity-100 max-w-[100px]' : 'opacity-0 max-w-0 group-hover:max-w-[150px] group-hover:opacity-100'}`}>
+        {playing ? "Pause" : "Play Music"}
       </span>
     </button>
   );
@@ -216,9 +216,9 @@ const CountdownTimer = ({ targetDate }) => {
       {Object.entries(timeLeft).map(([unit, value]) => {
         if (unit === 'total') return null;
         return (
-          <div key={unit} className="flex flex-col items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-2 min-w-[60px]">
-            <span className="text-xl font-bold font-mono">{value < 0 ? 0 : value}</span>
-            <span className="text-[10px] uppercase opacity-80">
+          <div key={unit} className="flex flex-col items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-1.5 md:p-2 min-w-[50px] md:min-w-[60px]">
+            <span className="text-lg md:text-xl font-bold font-mono">{value < 0 ? 0 : value}</span>
+            <span className="text-[9px] md:text-[10px] uppercase opacity-80">
               {unit === 'days' ? 'يوم' : unit === 'hours' ? 'ساعة' : unit === 'minutes' ? 'دقيقة' : 'ثانية'}
             </span>
           </div>
@@ -238,13 +238,13 @@ const DuaModal = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 backdrop-blur-md animate-fadeIn p-4">
-      <div className="bg-gradient-to-b from-indigo-900 to-purple-900 rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl border border-yellow-500/30 relative overflow-hidden">
+      <div className="bg-gradient-to-b from-indigo-900 to-purple-900 rounded-3xl p-6 md:p-8 max-w-sm w-full text-center shadow-2xl border border-yellow-500/30 relative overflow-hidden">
         <div className="absolute top-2 left-4 text-yellow-200 opacity-50">✨</div>
         <div className="absolute bottom-4 right-4 text-yellow-200 opacity-50">✨</div>
         <button onClick={onClose} className="absolute top-4 right-4 text-white/50 hover:text-white"><X size={24} /></button>
-        <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(234,179,8,0.3)]"><Moon className="text-yellow-400 w-10 h-10 fill-current" /></div>
-        <h2 className="text-2xl font-bold text-yellow-100 mb-6 font-serif">رسالة طمأنينة</h2>
-        <p className="text-white mb-8 leading-loose text-xl font-medium font-serif border-r-4 border-yellow-500 pr-4 bg-white/5 p-4 rounded-l-lg">"{dua}"</p>
+        <div className="w-16 h-16 md:w-20 md:h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(234,179,8,0.3)]"><Moon className="text-yellow-400 w-8 h-8 md:w-10 md:h-10 fill-current" /></div>
+        <h2 className="text-xl md:text-2xl font-bold text-yellow-100 mb-4 md:mb-6 font-serif">رسالة طمأنينة</h2>
+        <p className="text-white mb-6 md:mb-8 leading-loose text-lg md:text-xl font-medium font-serif border-r-4 border-yellow-500 pr-4 bg-white/5 p-4 rounded-l-lg">"{dua}"</p>
         <button onClick={onClose} className="w-full bg-white/10 hover:bg-white/20 text-yellow-200 font-bold py-3 rounded-xl transition-all border border-yellow-500/30">يا رب ❤️</button>
       </div>
     </div>
@@ -259,11 +259,11 @@ const PanicModal = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-md animate-fadeIn p-4">
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl border border-white/10 relative">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-6 md:p-8 max-w-sm w-full text-center shadow-2xl border border-white/10 relative">
         <button onClick={onClose} className="absolute top-4 right-4 text-white/50 hover:text-white">✕</button>
-        <div className="w-20 h-20 bg-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce shadow-[0_0_30px_rgba(236,72,153,0.3)]"><Heart className="text-pink-500 w-10 h-10 fill-current" /></div>
-        <h2 className="text-2xl font-bold text-white mb-4">متخافيش كله هيعدي ❤️</h2>
-        <p className="text-gray-300 mb-8 leading-relaxed text-lg border-l-4 border-pink-500 pl-4 bg-white/5 p-4 rounded-r-lg">"{msg}"</p>
+        <div className="w-16 h-16 md:w-20 md:h-20 bg-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce shadow-[0_0_30px_rgba(236,72,153,0.3)]"><Heart className="text-pink-500 w-8 h-8 md:w-10 md:h-10 fill-current" /></div>
+        <h2 className="text-xl md:text-2xl font-bold text-white mb-4">متخافيش كله هيعدي ❤️</h2>
+        <p className="text-gray-300 mb-6 md:mb-8 leading-relaxed text-base md:text-lg border-l-4 border-pink-500 pl-4 bg-white/5 p-4 rounded-r-lg">"{msg}"</p>
         <button onClick={onClose} className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-pink-500/25 transition-all transform hover:-translate-y-1"> ❤️ </button>
       </div>
     </div>
@@ -534,7 +534,7 @@ const DailyTodoList = () => {
   const allCompleted = tasks.length > 0 && tasks.every(t => t.completed);
 
   return (
-    <div className="w-full mt-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[24px] p-6 shadow-xl animate-fadeIn">
+    <div className="w-full mt-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[24px] p-4 md:p-6 shadow-xl animate-fadeIn">
       <div className="flex items-center gap-2 mb-4 text-pink-200"><CheckCircle size={20} /><h3 className="text-lg font-bold">مهام اليوم (Daily Quests)</h3></div>
       <form onSubmit={addTask} className="flex gap-2 mb-4">
         <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="وراكي إيه تذاكريه النهاردة؟" className="flex-1 bg-black/20 border border-white/10 rounded-xl px-4 py-2 text-white placeholder-white/40 outline-none focus:border-pink-500/50 transition-colors" />
@@ -672,17 +672,17 @@ export default function App() {
       {duaMode && <DuaModal onClose={() => setDuaMode(false)} />}
       {gameMode && <GameModal type={gameMode} onClose={() => setGameMode(null)} />}
 
-      <div className="relative z-10 max-w-2xl mx-auto px-4 py-8 flex flex-col min-h-screen">
-        <header className="text-center mb-6 pt-4 relative">
+      <div className="relative z-10 max-w-2xl mx-auto px-4 py-6 flex flex-col min-h-screen">
+        <header className="text-center mb-4 pt-12 relative">
           <button onClick={() => setDuaMode(true)} className="absolute right-0 top-0 p-2 bg-yellow-500/20 text-yellow-300 rounded-full hover:bg-yellow-500/40 transition-colors animate-pulse-slow" title="رسالة طمأنينة"><Moon size={20} /></button>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 backdrop-blur-xl rounded-full text-pink-200 text-sm font-medium mb-3 border border-white/10 shadow-lg"><Star size={14} className="fill-current" /> {activeExam.date} • {activeExam.displayDate}</div>
-          <h1 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 mb-2 drop-shadow-sm">{activeExam.subject}</h1>
+          <h1 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 mb-2 drop-shadow-sm">{activeExam.subject}</h1>
           <p className="text-purple-200/60 text-lg font-light">{activeExam.description}</p>
           {!isCompleted && <CountdownTimer targetDate={activeExam.date} />}
         </header>
 
         <main className="flex-grow flex flex-col items-center justify-start w-full">
-          <div className="w-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] p-6 shadow-2xl relative overflow-visible ring-1 ring-white/10">
+          <div className="w-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] p-4 md:p-6 shadow-2xl relative overflow-visible ring-1 ring-white/10">
             {activeExam.gameType && !isCompleted && (
               <button onClick={() => setGameMode(activeExam.gameType)} className="absolute top-4 left-4 z-40 bg-white/10 hover:bg-white/20 text-white p-2 rounded-xl flex items-center gap-2 text-xs font-bold border border-white/10 transition-all hover:scale-105"><Gamepad2 size={16} /> العب شوية</button>
             )}
@@ -708,8 +708,8 @@ export default function App() {
           </div>
         </main>
 
-        <div className="mt-8">
-           <div className="flex gap-3 overflow-x-auto pb-4 px-2 no-scrollbar snap-x">
+        <div className="mt-6 w-full">
+           <div className="flex gap-3 overflow-x-auto pb-4 px-2 no-scrollbar snap-x touch-pan-x">
             {EXAMS_DATA.map((exam, idx) => {
               const isDone = (progress[exam.id] || 0) >= exam.totalPieces;
               const isActive = idx === activeExamIndex;
@@ -758,7 +758,6 @@ function PuzzleInput({ pieceNumber, onUnlock }) {
   return (
     <form onSubmit={handleSubmit} className="relative group">
       <div className={`relative flex items-center bg-black/20 backdrop-blur-xl rounded-2xl border transition-all duration-300 ${status === 'error' ? 'border-red-400/50 bg-red-500/10 shake' : 'border-white/10 group-focus-within:border-pink-500/50 group-focus-within:bg-black/40'}`}>
-        <div className="pl-4 text-white/50"><Lock size={18} /></div>
         <input type="text" value={val} onChange={(e) => setVal(e.target.value)} placeholder={`اكتبي كود القطعة رقم ${pieceNumber}...`} className="w-full bg-transparent border-none text-white placeholder-white/30 px-4 py-4 outline-none font-medium tracking-wide" />
         <button type="submit" className="bg-white/10 text-white p-2 m-2 rounded-xl hover:bg-pink-500 transition-colors"><Unlock size={20} /></button>
       </div>
