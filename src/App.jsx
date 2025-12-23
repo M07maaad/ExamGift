@@ -116,7 +116,7 @@ const EXAMS_DATA = [
     date: '2026-01-20',
     displayDate: '20 يناير',
     subject: 'Medical Micro ',
-    giftName: 'Nail Care Kit',
+    giftName: 'Nail Care',
     totalPieces: 4, // المادة الوحش
     codes: ['hero', 'polish', 'care', 'shine'],
     imageUrl: GIFT_IMAGES.nailcare,
@@ -693,7 +693,7 @@ export default function App() {
               <button onClick={() => setGameMode(activeExam.gameType)} className="absolute top-4 left-4 z-40 bg-white/10 hover:bg-white/20 text-white p-2 rounded-xl flex items-center gap-2 text-xs font-bold border border-white/10 transition-all hover:scale-105"><Gamepad2 size={16} /> العب شوية</button>
             )}
             {isCompleted && (
-               <div className="text-center py-4 animate-fadeIn absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm rounded-[32px]"><div className="text-6xl mb-4 animate-bounce drop-shadow-lg">🎉</div><h2 className="text-3xl font-bold text-white mb-2">{activeExam.giftName}</h2><p className="text-pink-200">ألف مبروك يا بطلة ❤️</p></div>
+               <div className="text-center py-4 animate-fadeIn absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm rounded-[32px]"><div className="text-6xl mb-4 animate-bounce drop-shadow-lg">🎉</div><h2 className="text-3xl font-bold text-white mb-2">{activeExam.giftName}</h2><p className="text-pink-200">ألف مبروك يا امنيييية ❤️</p></div>
             )}
             <div className="relative w-full aspect-square md:aspect-video rounded-xl bg-black/20 shadow-inner border border-white/5" style={{ overflow: 'visible', padding: '10px' }}>
                <div className="absolute inset-0 opacity-10 rounded-xl" style={{backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px', overflow: 'hidden'}}></div>
