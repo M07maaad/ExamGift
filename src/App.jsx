@@ -421,7 +421,7 @@ const ShooterGame = () => {
 };
 
 const MemoryGame = () => {
-  const ICONS = ['📚', '☕', '💡', '🎓', '⏰', '✏️'];
+  const ICONS = ['📚', '☕', '🤍', '🎓', '⏰', '✏️'];
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [solved, setSolved] = useState([]);
@@ -738,7 +738,6 @@ function PuzzleInput({ pieceNumber, onUnlock }) {
   return (
     <form onSubmit={handleSubmit} className="relative group">
       <div className={`relative flex items-center bg-black/20 backdrop-blur-xl rounded-2xl border transition-all duration-300 ${status === 'error' ? 'border-red-400/50 bg-red-500/10 shake' : 'border-white/10 group-focus-within:border-pink-500/50 group-focus-within:bg-black/40'}`}>
-        <div className="pl-4 text-white/50"><Lock size={18} /></div>
         <input type="text" value={val} onChange={(e) => setVal(e.target.value)} placeholder={`اكتبي كود القطعة رقم ${pieceNumber}...`} className="w-full bg-transparent border-none text-white placeholder-white/30 px-4 py-4 outline-none font-medium tracking-wide" />
         <button type="submit" className="bg-white/10 text-white p-2 m-2 rounded-xl hover:bg-pink-500 transition-colors"><Unlock size={20} /></button>
       </div>
