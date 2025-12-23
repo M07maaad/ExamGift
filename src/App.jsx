@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Lock, Unlock, Music, Star, Pause, CheckCircle, Plus, Trash2, CheckSquare, Square, AlertTriangle, Heart, Gamepad2, Moon, X, Trophy, Palette, Flame } from 'lucide-react';
+import { Lock, Unlock, Music, Star, Pause, CheckCircle, Plus, Trash2, CheckSquare, Square, AlertTriangle, Heart, Gamepad2, Moon, X, Trophy, Palette, Flame, RotateCcw } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 // ------------------------------------------------------------------
@@ -14,9 +14,9 @@ const GIFT_IMAGES = {
   candle: 'https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/890535/5.jpg?9878',
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
   anghami: 'https://eshop.bh.zain.com/sites/default/files/ImagesDir/2024-01/Anghami1648x890-Dec-2-04.jpg',
-  Bracelet: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80', 
+  bracelet: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80', 
   diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
-  Iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
+  iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
 
 const DUA_LIST = [
@@ -51,7 +51,7 @@ const EXAMS_DATA = [
     giftName: 'Chocolate 🍫',
     totalPieces: 2,
     codes: ['relax', 'light'],
-    imageUrl: GIFT_IMAGES.Chocolate,
+    imageUrl: GIFT_IMAGES.chocolate,
     description: 'الA+ في جيبك كدة كدة يعني  😌',
     gameType: 'diamond'
   },
@@ -95,7 +95,7 @@ const EXAMS_DATA = [
     id: 6,
     date: '2026-01-15',
     displayDate: '15 يناير',
-    subject: 'Quality Control)',
+    subject: 'Quality Control',
     giftName: 'Diamond Painting',
     totalPieces: 3,
     codes: ['art', 'color', 'calm'],
@@ -123,7 +123,7 @@ const EXAMS_DATA = [
     giftName: 'Ice Shapes',
     totalPieces: 2,
     codes: ['freedom', 'party'],
-    imageUrl: GIFT_IMAGES.Iceshape,
+    imageUrl: GIFT_IMAGES.iceshape,
     isBigGift: true,
     description: 'مبروك التخرج من الترم!, لازم تحتفلي ب ايس كوفي بقي 🎉',
     gameType: 'catcher'
@@ -152,7 +152,6 @@ const getTimeRemaining = (endtime) => {
 
 const MusicPlayer = () => {
   const [playing, setPlaying] = useState(false);
-  // رابط موسيقى بيانو هادئة (تشبه ستايل أنغام - سيدي وصالك Instrumental Vibe)
   const musicUrl = "https://serv100.albumaty.com/2024/Albumaty.Com_angham_khlyk_maaha.mp3"; 
   const [audio] = useState(new Audio(musicUrl));
 
@@ -605,6 +604,14 @@ export default function App() {
     localStorage.setItem('modernExamGiftProgress_v20', JSON.stringify(newProgress));
   };
 
+  const handleReset = () => {
+    if (confirm('هل أنت متأكد؟ سيتم حذف جميع الأكواد والمهام والبدء من جديد.')) {
+      localStorage.removeItem('modernExamGiftProgress_v20');
+      localStorage.removeItem('examGift_todo');
+      window.location.reload();
+    }
+  };
+
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
     const index = EXAMS_DATA.findIndex(e => e.date >= today);
@@ -687,7 +694,10 @@ export default function App() {
           </div>
         </div>
 
-        <button onClick={() => setPanicMode(true)} className="fixed bottom-6 right-6 bg-red-500/80 backdrop-blur-md text-white p-4 rounded-full shadow-2xl hover:bg-red-600 transition-all z-40 hover:scale-110 border border-red-400 animate-pulse-slow flex items-center gap-2"><AlertTriangle size={24} /></button>
+        <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-40">
+           <button onClick={handleReset} className="bg-slate-700/80 backdrop-blur-md text-slate-300 p-3 rounded-full shadow-lg hover:bg-red-600 hover:text-white transition-all hover:scale-110 border border-white/10" title="إعادة ضبط المصنع (حذف البيانات)"><RotateCcw size={20} /></button>
+           <button onClick={() => setPanicMode(true)} className="bg-red-500/80 backdrop-blur-md text-white p-4 rounded-full shadow-2xl hover:bg-red-600 transition-all hover:scale-110 border border-red-400 animate-pulse-slow flex items-center gap-2"><AlertTriangle size={24} /></button>
+        </div>
       </div>
     </div>
   );
