@@ -570,7 +570,7 @@ const MemoryGame = () => {
 const GameModal = ({ type, onClose }) => {
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 backdrop-blur-md animate-fadeIn p-4">
-      <div className="w-full max-w-md h-[500px] bg-gray-900 rounded-3xl border border-white/20 relative overflow-hidden flex flex-col">
+      <div className="w-[600px] h-[700px] bg-gray-900 rounded-3xl border border-white/20 relative overflow-hidden flex flex-col">
         <button onClick={onClose} className="absolute top-4 right-4 text-white/50 hover:text-white z-50 bg-black/50 p-1 rounded-full"><X size={24} /></button>
         {type === 'shooter' && <ShooterGame />}
         {type === 'memory' && <MemoryGame />}
