@@ -16,7 +16,7 @@ const GIFT_IMAGES = {
   anghami: 'https://eshop.bh.zain.com/sites/default/files/ImagesDir/2024-01/Anghami1648x890-Dec-2-04.jpg',
   Bracelet: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80', 
   diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
-  notebook: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80',
+  Iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
 
 const DUA_LIST = [
@@ -27,7 +27,7 @@ const DUA_LIST = [
   "اللهم إني أستودعك ما قرأت وما حفظت وما تعلمت، فرده عند حاجتي إليه",
   "وَقُل رَّبِّ زِدْنِي عِلْمًا",
   "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
-  "لا تخافي ولا تحزني.. إنا رادوه إليك (تفاءلي بالخير)"
+  "لا تخافي ولا تحزني.. (تفاءلي بالخير)"
 ];
 
 const EXAMS_DATA = [
@@ -107,7 +107,7 @@ const EXAMS_DATA = [
     id: 7,
     date: '2026-01-20',
     displayDate: '20 يناير',
-    subject: 'Medical Micro (HARD)',
+    subject: 'Medical Micro ',
     giftName: 'Nail Care Kit',
     totalPieces: 4, // المادة الوحش
     codes: ['hero', 'polish', 'care', 'shine'],
@@ -123,7 +123,7 @@ const EXAMS_DATA = [
     giftName: 'Ice Shapes',
     totalPieces: 2,
     codes: ['freedom', 'party'],
-    imageUrl: GIFT_IMAGES.final,
+    imageUrl: GIFT_IMAGES.Iceshape,
     isBigGift: true,
     description: 'مبروك التخرج من الترم!, لازم تحتفلي ب ايس كوفي بقي 🎉',
     gameType: 'catcher'
