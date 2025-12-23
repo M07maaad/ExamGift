@@ -837,6 +837,7 @@ export default function App() {
         </div>
 
         <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-40">
+           <button onClick={handleReset} className="bg-slate-700/80 backdrop-blur-md text-slate-300 p-3 rounded-full shadow-lg hover:bg-red-600 hover:text-white transition-all hover:scale-110 border border-white/10" title="إعادة ضبط المصنع (حذف البيانات)"><RotateCcw size={20} /></button>
            <button onClick={() => setPanicMode(true)} className="bg-red-500/80 backdrop-blur-md text-white p-4 rounded-full shadow-2xl hover:bg-red-600 transition-all hover:scale-110 border border-red-400 animate-pulse-slow flex items-center gap-2"><AlertTriangle size={24} /></button>
         </div>
       </div>
