@@ -671,9 +671,15 @@ export default function App() {
             )}
             <div className="relative w-full aspect-square md:aspect-video rounded-xl bg-black/20 shadow-inner border border-white/5" style={{ overflow: 'visible', padding: '10px' }}>
                <div className="absolute inset-0 opacity-10 rounded-xl" style={{backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px', overflow: 'hidden'}}></div>
-               {Array.from({ length: activeExam.totalPieces }).map((_, idx) => (
-                  <JigsawPiece key={idx} index={idx} totalPieces={activeExam.totalPieces} imageUrl={activeExam.imageUrl} isUnlocked={unlockedCount > idx || isCompleted} onClick={() => {}} />
-               ))}
+               
+               {isCompleted ? (
+                   <img src={activeExam.imageUrl} alt="Gift" className="w-full h-full object-cover rounded-xl animate-fadeIn transition-all duration-1000" />
+               ) : (
+                   Array.from({ length: activeExam.totalPieces }).map((_, idx) => (
+                      <JigsawPiece key={idx} index={idx} totalPieces={activeExam.totalPieces} imageUrl={activeExam.imageUrl} isUnlocked={unlockedCount > idx || isCompleted} onClick={() => {}} />
+                   ))
+               )}
+
             </div>
             {!isCompleted && (
               <div className="mt-8"><PuzzleInput pieceNumber={unlockedCount + 1} onUnlock={handleUnlock} /><p className="text-center text-white/30 text-xs mt-3 font-light">* كود الهدية معاكي بعد ما تخلصي المذاكرة</p></div>
@@ -687,10 +693,29 @@ export default function App() {
             {EXAMS_DATA.map((exam, idx) => {
               const isDone = (progress[exam.id] || 0) >= exam.totalPieces;
               const isActive = idx === activeExamIndex;
+              
+              // Logic for Sequential Locking
+              let isLocked = false;
+              if (idx > 0) {
+                 const prevExamId = EXAMS_DATA[idx - 1].id;
+                 const prevExamProgress = progress[prevExamId] || 0;
+                 if (prevExamProgress < EXAMS_DATA[idx - 1].totalPieces) {
+                    isLocked = true;
+                 }
+              }
+
               return (
-                <button key={exam.id} onClick={() => setActiveExamIndex(idx)} className={`flex-shrink-0 snap-center flex flex-col items-center justify-center w-16 h-20 rounded-2xl transition-all duration-300 border ${isActive ? 'bg-gradient-to-b from-pink-500 to-purple-600 border-pink-400 text-white shadow-lg scale-105' : 'bg-white/5 border-white/10 text-white/50 hover:bg-white/10'}`}>
+                <button 
+                  key={exam.id} 
+                  onClick={() => !isLocked && setActiveExamIndex(idx)} 
+                  disabled={isLocked}
+                  className={`flex-shrink-0 snap-center flex flex-col items-center justify-center w-16 h-20 rounded-2xl transition-all duration-300 border 
+                  ${isActive ? 'bg-gradient-to-b from-pink-500 to-purple-600 border-pink-400 text-white shadow-lg scale-105' : 
+                    isLocked ? 'bg-slate-800/50 border-slate-700 text-slate-600 cursor-not-allowed grayscale' :
+                    'bg-white/5 border-white/10 text-white/50 hover:bg-white/10'}`}
+                >
                   <span className="text-[10px] font-bold mb-1 opacity-70">{exam.date.split('-')[1]}/{exam.date.split('-')[2]}</span>
-                  {isDone ? <CheckCircle size={18} className="text-green-400" /> : isActive ? <Star size={18} className="fill-white" /> : <Lock size={16} />}
+                  {isLocked ? <Lock size={16} /> : isDone ? <CheckCircle size={18} className="text-green-400" /> : isActive ? <Star size={18} className="fill-white" /> : <Unlock size={16} className="opacity-50" />}
                 </button>
               );
             })}
