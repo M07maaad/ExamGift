@@ -14,7 +14,7 @@ const GIFT_IMAGES = {
   candle: 'https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/890535/5.jpg?9878',
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
   anghami: 'https://eshop.bh.zain.com/sites/default/files/ImagesDir/2024-01/Anghami1648x890-Dec-2-04.jpg',
-  Sadaka: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062018/untitled-2_11.png?u6Vq7z7yCcuaZlcJ92EyW9MCjENzhsy8&itok=nYiOEGud', 
+  sadaka: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062018/untitled-2_11.png?u6Vq7z7yCcuaZlcJ92EyW9MCjENzhsy8&itok=nYiOEGud', 
   diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
   iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
@@ -95,7 +95,7 @@ const EXAMS_DATA = [
     giftName: 'Sadaka',
     totalPieces: 2,
     codes: ['good', 'forever'],
-    imageUrl: GIFT_IMAGES.Sadaka,
+    imageUrl: GIFT_IMAGES.sadaka,
     description: 'لازم شوية ثواب بردو علشان نعدي صافي 😂 ',
     gameType: 'memory'
   },
@@ -116,7 +116,7 @@ const EXAMS_DATA = [
     date: '2026-01-20',
     displayDate: '20 يناير',
     subject: 'Medical Micro ',
-    giftName: 'Nail Care',
+    giftName: 'Nail Care Kit',
     totalPieces: 4, // المادة الوحش
     codes: ['hero', 'polish', 'care', 'shine'],
     imageUrl: GIFT_IMAGES.nailcare,
@@ -163,17 +163,16 @@ const getTimeRemaining = (endtime) => {
 
 const MusicPlayer = () => {
   const [playing, setPlaying] = useState(false);
-  const [audio] = useState(new Audio()); // نبدأ بكائن صوتي فارغ
+  const [audio] = useState(new Audio());
 
   const toggleMusic = () => {
     if (playing) {
       audio.pause();
       setPlaying(false);
     } else {
-      // اختيار أغنية عشوائية عند الضغط
       const randomSong = MUSIC_PLAYLIST[Math.floor(Math.random() * MUSIC_PLAYLIST.length)];
       audio.src = randomSong;
-      audio.load(); // تحميل المصدر الجديد
+      audio.load();
       audio.play().catch(e => console.log("Audio play failed", e));
       setPlaying(true);
     }
@@ -181,7 +180,6 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     audio.loop = true;
-    // تنظيف عند الخروج
     return () => {
       audio.pause();
     };
@@ -272,21 +270,26 @@ const PanicModal = ({ onClose }) => {
 
 // 💎 Diamond Painting Game
 const DiamondPaintingGame = () => {
+  // 11x11 Simple Flower
   const PIXEL_MAP = [
-    ['C','C','A','A','C','A','A','C'],
-    ['C','A','B','B','A','B','B','A'],
-    ['A','B','B','B','B','B','B','A'],
-    ['A','B','B','B','B','B','B','A'],
-    ['C','A','B','B','B','B','A','C'],
-    ['C','C','A','B','B','A','C','C'],
-    ['C','C','C','A','B','A','C','C'],
-    ['C','C','C','C','A','C','C','C'],
+    ['D','D','A','A','D','D','D','A','A','D','D'],
+    ['D','A','B','B','A','D','A','B','B','A','D'],
+    ['A','B','B','B','B','A','B','B','B','B','A'],
+    ['A','B','B','B','B','B','B','B','B','B','A'],
+    ['D','A','B','B','C','C','C','B','B','A','D'],
+    ['D','D','A','B','C','C','C','B','A','D','D'],
+    ['D','A','B','B','C','C','C','B','B','A','D'],
+    ['A','B','B','B','B','B','B','B','B','B','A'],
+    ['A','B','B','B','B','A','B','B','B','B','A'],
+    ['D','A','B','B','A','D','A','B','B','A','D'],
+    ['D','D','A','A','D','D','D','A','A','D','D'],
   ];
 
   const PALETTE = {
-    'A': { color: '#ff80ab', label: 'A' }, // Pink
-    'B': { color: '#f43f5e', label: 'B' }, // Red
-    'C': { color: '#f1f5f9', label: 'C' }  // White/Bg
+    'A': { color: '#ec4899', label: 'A' }, // Hot Pink (Outline)
+    'B': { color: '#fbcfe8', label: 'B' }, // Light Pink (Petals)
+    'C': { color: '#fbbf24', label: 'C' }, // Yellow (Center)
+    'D': { color: '#f1f5f9', label: 'D' }, // Background
   };
 
   const [grid, setGrid] = useState(PIXEL_MAP.map(row => row.map(code => ({ code, filled: false }))));
@@ -316,13 +319,13 @@ const DiamondPaintingGame = () => {
   return (
     <div className="flex-1 bg-slate-900 flex flex-col items-center justify-center p-4 relative overflow-hidden">
       <h3 className="text-white mb-4 font-bold flex items-center gap-2 text-lg">
-        <span className="text-2xl">💎</span> Diamond Art: Heart
+        <span className="text-2xl">💎</span> Diamond Art
       </h3>
       
       {completed && (
         <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/80 animate-fadeIn flex-col">
           <h2 className="text-4xl font-bold text-pink-400 animate-bounce mb-2">فنانة! 😍</h2>
-          <p className="text-white text-sm">خلصتي اللوحة ببراعة</p>
+          <p className="text-white text-sm">🌸</p>
         </div>
       )}
 
@@ -393,47 +396,132 @@ const CatchGame = () => {
       {items.map(item => (<div key={item.id} className="absolute text-2xl transition-none" style={{ left: `${item.left}%`, top: `${item.top}%` }}>{item.symbol}</div>))}
       <div className="absolute bottom-4 text-4xl transition-all duration-100 ease-linear" style={{ left: `${basketLeft}%` }}>🛒</div>
       <div className="absolute inset-0 flex"><div className="w-1/2 h-full z-20" onClick={moveLeft}></div><div className="w-1/2 h-full z-20" onClick={moveRight}></div></div>
-      <div className="absolute bottom-2 w-full text-center text-white/30 text-xs pointer-events-none">اضغطي يمين أو شمال للحركة</div>
+      <div className="absolute bottom-2 w-full text-center text-white/30 text-xs pointer-events-none"> يمين أو شمال للحركة</div>
     </div>
   );
 };
 
+// 🔨 Whack A Mole Game (The NEW Shooter Game)
 const ShooterGame = () => {
   const [score, setScore] = useState(0);
-  const [pos, setPos] = useState({ top: '50%', left: '50%' });
-  const [showTarget, setShowTarget] = useState(true);
+  const [activeHole, setActiveHole] = useState(null);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isHitting, setIsHitting] = useState(false);
+  const gameRef = useRef(null);
 
-  const moveTarget = () => {
-    const t = Math.random() * 80 + 10;
-    const l = Math.random() * 80 + 10;
-    setPos({ top: `${t}%`, left: `${l}%` });
-    setShowTarget(true);
-  };
-
-  const hit = () => {
-    setScore(s => s + 1);
-    setShowTarget(false);
-    if (window.navigator.vibrate) window.navigator.vibrate(50);
-    if (score + 1 === 10) { confetti({ particleCount: 150, spread: 70, colors: ['#f43f5e', '#ffffff'] }); }
-    setTimeout(moveTarget, 300);
-  };
-
+  // تحريك الشاكوش مع الماوس
   useEffect(() => {
-    const timer = setInterval(moveTarget, 1000);
-    return () => clearInterval(timer);
+    const handleMouseMove = (e) => {
+      if (gameRef.current) {
+        const rect = gameRef.current.getBoundingClientRect();
+        setCursorPos({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        });
+      }
+    };
+    // للموبايل (Touch)
+    const handleTouchMove = (e) => {
+       if (gameRef.current && e.touches[0]) {
+        const rect = gameRef.current.getBoundingClientRect();
+        setCursorPos({
+          x: e.touches[0].clientX - rect.left,
+          y: e.touches[0].clientY - rect.top
+        });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
   }, []);
 
+  // منطق ظهور الدكتور عشوائياً (Updated for speed and win condition)
+  useEffect(() => {
+    if (score >= 10) return; // Stop game loop if won
+
+    const interval = setInterval(() => {
+      const randomHole = Math.floor(Math.random() * 9);
+      setActiveHole(randomHole);
+      // Faster disappearance: 600ms instead of 800ms
+      setTimeout(() => setActiveHole(null), 600); 
+    }, 500); // Faster appearance: 700ms instead of 1000ms
+
+    return () => clearInterval(interval);
+  }, [score]); // Re-run when score changes to check win condition
+
+  const whack = (index) => {
+    if (score >= 10) return;
+
+    setIsHitting(true);
+    setTimeout(() => setIsHitting(false), 100); // أنيميشن الضربة
+
+    if (index === activeHole) {
+      setScore(s => s + 1);
+      setActiveHole(null); // يختفي فوراً لما يتضرب
+      if (window.navigator.vibrate) window.navigator.vibrate(50);
+      if (score + 1 === 10) {
+         confetti({ particleCount: 150, spread: 70, colors: ['#f43f5e', '#ffffff'] }); 
+      }
+    }
+  };
+
+  // Render Win State
+  if (score >= 10) {
+    return (
+      <div className="flex-1 relative bg-[#5d4037] flex flex-col items-center justify-center p-4 rounded-2xl border-4 border-[#3e2723] text-center">
+         <div className="text-6xl mb-4 animate-bounce">🎉</div>
+         <h2 className="text-3xl font-bold text-green-400 mb-2">أخدنا حقنا! 😂</h2>
+         <p className="text-white">خلاص كفاية عليه كدة</p>
+         <button onClick={() => setScore(0)} className="mt-6 bg-[#3e2723] text-[#d7ccc8] px-6 py-2 rounded-full hover:bg-[#4e342e] transition">العب تاني</button>
+      </div>
+    );
+  }
+
+  // Render Game State
   return (
-    <div className="flex-1 relative bg-slate-800 flex flex-col items-center justify-center cursor-crosshair">
-      <h3 className="absolute top-4 text-white text-xl font-bold bg-black/30 px-4 py-1 rounded-full">Score: {score}</h3>
-      {score >= 10 ? (
-        <div className="text-center animate-bounce"><h2 className="text-3xl font-bold text-green-400 mb-2">أخدنا حقنا! 😂</h2><p className="text-white">خلاص كفاية عليه كدة</p></div>
-      ) : (
-        <p className="absolute bottom-4 text-white/50 text-sm">اضربي الدكتور عشان نخلص!</p>
-      )}
-      {showTarget && score < 10 && (
-        <img src={DOCTOR_AVATAR} onClick={hit} alt="Target" className="absolute w-20 h-20 cursor-pointer transition-all duration-100 hover:scale-95 active:scale-75 drop-shadow-2xl" style={{ top: pos.top, left: pos.left, transition: 'top 0.3s, left 0.3s' }} />
-      )}
+    <div ref={gameRef} className="flex-1 relative bg-[#5d4037] flex flex-col items-center justify-center p-4 overflow-hidden cursor-none touch-none rounded-2xl border-4 border-[#3e2723]">
+      <h3 className="absolute top-4 text-white text-xl font-bold bg-black/40 px-4 py-1 rounded-full z-10 border border-white/20">Score: {score}/10</h3>
+      
+      {/* Grid of Holes */}
+      <div className="grid grid-cols-3 gap-4 w-full max-w-[300px] z-0">
+        {Array.from({ length: 9 }).map((_, idx) => (
+          <div 
+            key={idx} 
+            className="relative w-full aspect-square bg-[#3e2723] rounded-full shadow-[inset_0_10px_20px_rgba(0,0,0,0.5)] border-b-4 border-[#4e342e] overflow-hidden"
+            onMouseDown={() => whack(idx)}
+            onTouchStart={() => whack(idx)}
+          >
+            {/* The Doctor Mole */}
+            <div 
+              className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[90%] transition-transform duration-100 ease-out ${activeHole === idx ? 'translate-y-0' : 'translate-y-[110%]'}`}
+            >
+               <img src={DOCTOR_AVATAR} alt="Doctor" className="w-full h-full object-contain drop-shadow-xl pointer-events-none select-none" />
+            </div>
+            
+            {/* Dirt overlay for hiding */}
+            <div className="absolute bottom-0 w-full h-[15%] bg-[#3e2723] rounded-b-full z-10"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Custom Hammer Cursor */}
+      <div 
+        className="pointer-events-none fixed z-50 transition-transform duration-75"
+        style={{ 
+          left: cursorPos.x, 
+          top: cursorPos.y,
+          transform: `translate(-20%, -20%) rotate(${isHitting ? '-45deg' : '0deg'})`,
+          position: 'absolute' 
+        }}
+      >
+        <div className="text-6xl filter drop-shadow-lg">🔨</div>
+      </div>
+      
+      <p className="text-white/50 text-xs mt-4 z-10">اضربي الدكتور بالشاكوش بسرعة! 😂</p>
     </div>
   );
 };
