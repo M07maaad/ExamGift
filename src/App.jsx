@@ -19,6 +19,14 @@ const GIFT_IMAGES = {
   iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
 
+// 🎵 قائمة الأغاني (Playlist)
+const MUSIC_PLAYLIST = [
+  "https://serv100.albumaty.com/2024/Albumaty.Com_angham_khlyk_maaha.mp3",
+  "https://serv100.albumaty.com/dl/alf/angham/albums/7ala-khasa-gedan/02._Yaretak_Fahemni.mp3",
+  "https://serv100.albumaty.com/songs_2020/Albumaty.Com_angham_wnfdl_nrks.mp3",
+  "https://serv100.albumaty.com/songs_2020/Albumaty.Com_angham_lwht_bahtt.mp3"
+];
+
 const DUA_LIST = [
   "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي",
   "اللهم لا سهل إلا ما جعلته سهلاً، وأنت تجعل الحزن إذا شئت سهلاً",
@@ -155,21 +163,33 @@ const getTimeRemaining = (endtime) => {
 
 const MusicPlayer = () => {
   const [playing, setPlaying] = useState(false);
-  const musicUrl = "https://serv100.albumaty.com/2024/Albumaty.Com_angham_khlyk_maaha.mp3"; 
-  const [audio] = useState(new Audio(musicUrl));
+  const [audio] = useState(new Audio()); // نبدأ بكائن صوتي فارغ
+
+  const toggleMusic = () => {
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      // اختيار أغنية عشوائية عند الضغط
+      const randomSong = MUSIC_PLAYLIST[Math.floor(Math.random() * MUSIC_PLAYLIST.length)];
+      audio.src = randomSong;
+      audio.load(); // تحميل المصدر الجديد
+      audio.play().catch(e => console.log("Audio play failed", e));
+      setPlaying(true);
+    }
+  };
 
   useEffect(() => {
-    if (playing) {
-      audio.play().catch(e => console.log("Audio play failed", e));
-    } else {
-      audio.pause();
-    }
     audio.loop = true;
-  }, [playing, audio]);
+    // تنظيف عند الخروج
+    return () => {
+      audio.pause();
+    };
+  }, [audio]);
 
   return (
     <button 
-      onClick={() => setPlaying(!playing)}
+      onClick={toggleMusic}
       className={`fixed top-4 left-4 z-50 p-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 
       ${playing ? 'bg-pink-500 text-white w-auto pr-4' : 'bg-white/80 text-pink-500 w-12 hover:w-40 group overflow-hidden'}`}
     >
@@ -738,6 +758,7 @@ function PuzzleInput({ pieceNumber, onUnlock }) {
   return (
     <form onSubmit={handleSubmit} className="relative group">
       <div className={`relative flex items-center bg-black/20 backdrop-blur-xl rounded-2xl border transition-all duration-300 ${status === 'error' ? 'border-red-400/50 bg-red-500/10 shake' : 'border-white/10 group-focus-within:border-pink-500/50 group-focus-within:bg-black/40'}`}>
+        <div className="pl-4 text-white/50"><Lock size={18} /></div>
         <input type="text" value={val} onChange={(e) => setVal(e.target.value)} placeholder={`اكتبي كود القطعة رقم ${pieceNumber}...`} className="w-full bg-transparent border-none text-white placeholder-white/30 px-4 py-4 outline-none font-medium tracking-wide" />
         <button type="submit" className="bg-white/10 text-white p-2 m-2 rounded-xl hover:bg-pink-500 transition-colors"><Unlock size={20} /></button>
       </div>
