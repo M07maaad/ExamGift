@@ -9,12 +9,12 @@ const DOCTOR_AVATAR = 'https://cdn-icons-png.flaticon.com/512/3429/3429149.png';
 // ------------------------------------------------------------------
 
 const GIFT_IMAGES = {
-  chocolate: 'https://www.galaxychocolate.co.uk/sites/g/files/fnmzdf211/files/2021-02/Galaxy-Collection-Header-21x9.jpg',
+  chocolate: 'https://i.guim.co.uk/img/media/9cedccdb2d03523be71cff52cbcfe356122d44be/0_202_6048_3629/master/6048.jpg?width=1200&quality=85&auto=format&fit=max&s=177e7c6ccabb6191e6b200d83079c2db',
   redbull: 'https://ae01.alicdn.com/kf/Sdedaa144ec7646a8a402eb8f79c356bbC.jpg',
   candle: 'https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/890535/5.jpg?9878',
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
   anghami: 'https://eshop.bh.zain.com/sites/default/files/ImagesDir/2024-01/Anghami1648x890-Dec-2-04.jpg',
-  bracelet: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80', 
+  Sadaka: 'https://vectorseek.com/wp-content/uploads/2023/09/Children-Cancer-Hospital-57357-Logo-Vector.svg-.png', 
   diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
   iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
@@ -38,7 +38,7 @@ const EXAMS_DATA = [
     subject: 'Medicinal ',
     giftName: 'Scented Candle 🪔',
     totalPieces: 3,
-    codes: ['start', 'focus', 'power'],
+    codes: ['start', 'light', 'relax'],
     imageUrl: GIFT_IMAGES.candle,
     description: 'بداية قوية بس عايزين نهدي التوتر شوية 🪔',
     gameType: 'catcher'
@@ -50,7 +50,7 @@ const EXAMS_DATA = [
     subject: 'Drug Design ',
     giftName: 'Chocolate 🍫',
     totalPieces: 2,
-    codes: ['relax', 'light'],
+    codes: ['power', 'dark'],
     imageUrl: GIFT_IMAGES.chocolate,
     description: 'الA+ في جيبك كدة كدة يعني  😌',
     gameType: 'diamond'
@@ -62,7 +62,7 @@ const EXAMS_DATA = [
     subject: 'Drug Info ',
     giftName: 'Anghami Plus 🎧',
     totalPieces: 2,
-    codes: ['music', 'play'],
+    codes: ['music', 'angham'],
     imageUrl: GIFT_IMAGES.anghami,
     description: 'عشان تسمعي البلاي ليست بتاعتك براحتك 🎧',
     gameType: 'memory'
@@ -84,11 +84,11 @@ const EXAMS_DATA = [
     date: '2026-01-11',
     displayDate: '11 يناير',
     subject: 'Clinical Research ',
-    giftName: 'Simple Bracelet',
+    giftName: 'Sadaka',
     totalPieces: 2,
-    codes: ['hand', 'together'],
-    imageUrl: GIFT_IMAGES.bracelet,
-    description: 'حاجة رقيقة تفكرك إني دايماً معاكي ✨',
+    codes: ['good', 'forever'],
+    imageUrl: GIFT_IMAGES.57357,
+    description: 'لازم شوية ثواب بردو علشان نعدي صافي 😂 ',
     gameType: 'memory'
   },
   {
@@ -98,7 +98,7 @@ const EXAMS_DATA = [
     subject: 'Quality Control',
     giftName: 'Diamond Painting',
     totalPieces: 3,
-    codes: ['art', 'color', 'calm'],
+    codes: ['art', 'color', 'fun'],
     imageUrl: GIFT_IMAGES.diamond,
     description: 'افصلي من المذاكرة وطلعي الفنانة اللي جواكي 🎨',
     gameType: 'diamond'
@@ -122,7 +122,7 @@ const EXAMS_DATA = [
     subject: 'Drug Marketing ',
     giftName: 'Ice Shapes',
     totalPieces: 2,
-    codes: ['freedom', 'party'],
+    codes: ['freedom', 'coffe'],
     imageUrl: GIFT_IMAGES.iceshape,
     isBigGift: true,
     description: 'مبروك التخرج من الترم!, لازم تحتفلي ب ايس كوفي بقي 🎉',
@@ -131,12 +131,15 @@ const EXAMS_DATA = [
 ];
 
 const PANIC_MESSAGES = [
-  "خدي نفس عميق.. إنتي عملتي اللي عليكي وزيادة ❤️",
-  "أنا واثق فيكي، ومستنيكي نحتفل سوا 🌟",
-  "أي حاجة هتحصل أنا فخور بيكي.. متخافيش 💪",
-  "غمضي عينك دقيقة وافتكري إني جنبك ومعاكي 👫",
+  "اطمني .. إنتي عملتي اللي عليكي وزيادة ❤️",
+  "أنا واثق فيكي، و الله انتي قد ده كله و اكتر 🌟",
+  "أي حاجة هتحصل أنا فخور بيكي..  💪",
+  " خلاص بقي قولتلك مش مهم الدرجات تبقي حلوة كفاية انتي حلوة 🫣 ",
+  " مش مهم التقدير كفاية انا مقدرك 😂 ",
+  " اوعي تعيطي الكلية كلها متستاهلش دمعة منك و الله 🙄 ",
+  "اهدي نفسيتك و راحة بالك اهم من كل ده ❤️",
   "هانت خلاص.. دي مجرد فترة وهتعدي على خير ✨",
-  "إنتي قوية وذكية، والامتحان ده ولا حاجة جنبك 😉"
+  "إنتي مجتهدة و شاطوووورة اوي و الله ، والامتحانات دي ولا حاجة جنبك 😌"
 ];
 
 const getTimeRemaining = (endtime) => {
@@ -239,9 +242,9 @@ const PanicModal = ({ onClose }) => {
       <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl border border-white/10 relative">
         <button onClick={onClose} className="absolute top-4 right-4 text-white/50 hover:text-white">✕</button>
         <div className="w-20 h-20 bg-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce shadow-[0_0_30px_rgba(236,72,153,0.3)]"><Heart className="text-pink-500 w-10 h-10 fill-current" /></div>
-        <h2 className="text-2xl font-bold text-white mb-4">متخافيش، أنا هنا ❤️</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">متخافيش كله هيعدي ❤️</h2>
         <p className="text-gray-300 mb-8 leading-relaxed text-lg border-l-4 border-pink-500 pl-4 bg-white/5 p-4 rounded-r-lg">"{msg}"</p>
-        <button onClick={onClose} className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-pink-500/25 transition-all transform hover:-translate-y-1">هديت شوية شكراً ❤️</button>
+        <button onClick={onClose} className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-pink-500/25 transition-all transform hover:-translate-y-1"> ❤️ </button>
       </div>
     </div>
   );
