@@ -13,7 +13,7 @@ const GIFT_IMAGES = {
   redbull: 'https://ae01.alicdn.com/kf/Sdedaa144ec7646a8a402eb8f79c356bbC.jpg',
   candle: 'https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/890535/5.jpg?9878',
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
-  anghami: 'anghmai plus.png',
+  anghami: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1boICNLiPwwGFDxpfEROjQwVkCGzp1lgpJZo_ePHoWfI-Px4Zum6abr_h_tAJhYgXOHJ-OF-J6JOUlDWOymnxXVgCJQes7FUU6AisHm9vh6X9KzLncpoRwqMNozwYLGmlqx2d86X_IEwSVpDgaWUq4StYaxyv8CB9hpGAHeyKh7AMm1EHc8vMcfgtCfiq/s1600/anghami%20plus.png',
   sadaka: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062018/untitled-2_11.png?u6Vq7z7yCcuaZlcJ92EyW9MCjENzhsy8&itok=nYiOEGud', 
   diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
   iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
