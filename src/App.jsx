@@ -84,7 +84,7 @@ const EXAMS_DATA = [
     totalPieces: 3,
     codes: ['wings', 'energy', 'fly'],
     imageUrl: GIFT_IMAGES.redbull,
-    description: 'معروفة RedBull علشان نفوق 🔥',
+    description: ' رجعنا للتقيل عايزين نفوق 🔥',
     gameType: 'catcher'
   },
   {
