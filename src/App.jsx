@@ -10,7 +10,7 @@ const DOCTOR_AVATAR = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvX
 
 const GIFT_IMAGES = {
   chocolate: 'https://i.guim.co.uk/img/media/9cedccdb2d03523be71cff52cbcfe356122d44be/0_202_6048_3629/master/6048.jpg?width=1200&quality=85&auto=format&fit=max&s=177e7c6ccabb6191e6b200d83079c2db',
-  redbull: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM44gyXZ98ieUTo1wTDHplGRQgCxCPYOs0_EzJ83OIqGCVJiRV7EaexLQniSRzijOSY9xIHZAk0UV93tEtCnpAoCzsI05HxsBt0NeyUrT0_zidRNNmzSs04hEiOOMqU0y2yTcew1ZpJG3ErvD1HtVyK3mDCyoCHU-4YqYsYhpxFIBqmGNhLQ6GADMELlo8/s1600/Gemini%20Generated%20Image%20%2819%29.png',
+  redbull: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcCvWqokhquvDKGuR3A-0DNdRkWW4Tui0Q_DKi7buqDI6udP9OOtpO55lKOtjJBdMdr6KuDw0e42f4xkNjtH6D-VLe5BX92Q2HgLaz4V2T2EkWVyJQOaOLMhZEyWE8GpFRA80WOpZpHas3LvAj0NdUWB9Ld8hE0Au09Wtt4QUfIyj_ANRKBP33e4NhnYOC/s1600/Gemini%20Generated%20Image%20%2820%29.png',
   candle: 'https://eg.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/890535/5.jpg?9878',
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
   anghami: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1boICNLiPwwGFDxpfEROjQwVkCGzp1lgpJZo_ePHoWfI-Px4Zum6abr_h_tAJhYgXOHJ-OF-J6JOUlDWOymnxXVgCJQes7FUU6AisHm9vh6X9KzLncpoRwqMNozwYLGmlqx2d86X_IEwSVpDgaWUq4StYaxyv8CB9hpGAHeyKh7AMm1EHc8vMcfgtCfiq/s1600/anghami%20plus.png',
