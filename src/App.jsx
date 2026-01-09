@@ -15,7 +15,7 @@ const GIFT_IMAGES = {
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
   anghami: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1boICNLiPwwGFDxpfEROjQwVkCGzp1lgpJZo_ePHoWfI-Px4Zum6abr_h_tAJhYgXOHJ-OF-J6JOUlDWOymnxXVgCJQes7FUU6AisHm9vh6X9KzLncpoRwqMNozwYLGmlqx2d86X_IEwSVpDgaWUq4StYaxyv8CB9hpGAHeyKh7AMm1EHc8vMcfgtCfiq/s1600/anghami%20plus.png',
   sadaka: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-T0LADPP4rW60qwVfZt87fcXjjuKezlq1iuLii3DmBrKe0hPIGly_S6c9EgXtjH6Y6A9kTzoGwmtcDiAGzvvY_dBjW5ACJ8d_olMOz0Z0AdfMfCsFj3zrtICwqWHRX9mV1GVXw8hh-T9K6faFC0juw-HIf3-GD9OgcTWtIq9zTe4_DTIYXgIdKCxp95gZ/s1600/Google%20Gemini%20Image%20%283%29.png', 
-  diamond: 'https://www.comme3pommes.com/wp-content/uploads/2023/09/diamond-painting-enfant-1200x680.jpg?odnHeight=117&odnWidth=117&odnBg=FFFFFF', 
+  diamond: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5Kl59pa_viQrnuxZiIB1Wh70RaGmMIlw9ZzENr_4Aa5oOXmeZcimAniCieYf10-GHzPhmPJ3lobrLQIkhQcEk-asjPdSMNGCKtBXKV_RHjUNfRdXakQWFtHIrjabBKHkCML9vfCQ_CTtTRfdM-Zhi6wMe5yf039pxTqOaQtJNwaCZonK4gZqusrza75IF/s1600/Gemini%20Generated%20Image%20%2821%29.png', 
   iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
 
@@ -106,9 +106,9 @@ const EXAMS_DATA = [
     subject: 'Quality Control',
     giftName: 'Diamond Painting',
     totalPieces: 3,
-    codes: ['art', 'color', 'fun'],
+    codes: ['notes', 'vanilla', 'libre'],
     imageUrl: GIFT_IMAGES.diamond,
-    description: 'افصلي من المذاكرة وطلعي الفنانة اللي جواكي 🎨',
+    description: 'لازم ندلع القمر مينفعش يخاف من مادة زي دي 😌',
     gameType: 'diamond'
   },
   {
@@ -120,7 +120,7 @@ const EXAMS_DATA = [
     totalPieces: 4, // المادة الوحش
     codes: ['hero', 'polish', 'care', 'shine'],
     imageUrl: GIFT_IMAGES.nailcare,
-    description: 'عشان تدلعي نفسك وضوافرك بعد التعب ده 💅',
+    description: 'عشان تدلعي نفسك بعد التعب ده 💅',
     gameType: 'shooter' // لسة محتاجة تطلع غلها
   },
   {
