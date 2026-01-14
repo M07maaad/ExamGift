@@ -106,8 +106,8 @@ const EXAMS_DATA = [
     subject: 'Quality Control',
     giftName: 'YSL libre',
     totalPieces: 3,
-    codes: ['notes', 'vanilla', 'libre'],
-    imageUrl: GIFT_IMAGES.libre,
+    codes: ['polish', 'care', 'shine'],
+    imageUrl: GIFT_IMAGES.nailcare,
     description: 'لازم ندلع القمر مينفعش يخاف من مادة زي دي 😌',
     gameType: 'diamond'
   },
@@ -118,9 +118,9 @@ const EXAMS_DATA = [
     subject: 'Medical Micro ',
     giftName: 'Nail Care Kit',
     totalPieces: 4, // المادة الوحش
-    codes: ['hero', 'polish', 'care', 'shine'],
-    imageUrl: GIFT_IMAGES.nailcare,
-    description: 'عشان تدلعي نفسك بعد التعب ده 💅',
+    codes: ['notes', 'three', 'vanilla', 'libre'],
+    imageUrl: GIFT_IMAGES.libre,
+    description: 'عشان تدلعي نفسك بعد التعب ده كله 🥳',
     gameType: 'shooter' // لسة محتاجة تطلع غلها
   },
   {
