@@ -118,7 +118,7 @@ const EXAMS_DATA = [
     subject: 'Medical Micro ',
     giftName: 'Alma & Co Gift Card',
     totalPieces: 4, // المادة الوحش
-    codes: ['let', 'her', 'Choose', 'it'],
+    codes: ['let', 'her', 'choose', 'it'],
     imageUrl: GIFT_IMAGES.Alma,
     description: 'عشان تدلعي نفسك بعد التعب ده كله 🥳',
     gameType: 'shooter' // لسة محتاجة تطلع غلها
@@ -130,7 +130,7 @@ const EXAMS_DATA = [
     subject: 'Drug Marketing ',
     giftName: 'مفيش مكآفأة اكتر من اننا خلصنا امتحانات الصراحة 🥳😂',
     totalPieces: 2,
-    codes: ['freedom', 'coffe'],
+    codes: ['freedom', 'finally'],
     imageUrl: GIFT_IMAGES.final,
     isBigGift: true,
     description: 'مبروك التخرج من الترم! 🎉',
