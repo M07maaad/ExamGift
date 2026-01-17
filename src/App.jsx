@@ -119,7 +119,7 @@ const EXAMS_DATA = [
     giftName: 'Alma & Co Gift Card',
     totalPieces: 4, // المادة الوحش
     codes: ['let', 'her', 'Choose', 'it'],
-    imageUrl: GIFT_IMAGES.alma,
+    imageUrl: GIFT_IMAGES.Alma,
     description: 'عشان تدلعي نفسك بعد التعب ده كله 🥳',
     gameType: 'shooter' // لسة محتاجة تطلع غلها
   },
