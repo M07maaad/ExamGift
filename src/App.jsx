@@ -15,8 +15,8 @@ const GIFT_IMAGES = {
   nailcare: 'https://grandbazaregypt.biz/wp-content/uploads/2025/04/shaan-nail-01.jpg', // Nail Care / Polish
   anghami: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1boICNLiPwwGFDxpfEROjQwVkCGzp1lgpJZo_ePHoWfI-Px4Zum6abr_h_tAJhYgXOHJ-OF-J6JOUlDWOymnxXVgCJQes7FUU6AisHm9vh6X9KzLncpoRwqMNozwYLGmlqx2d86X_IEwSVpDgaWUq4StYaxyv8CB9hpGAHeyKh7AMm1EHc8vMcfgtCfiq/s1600/anghami%20plus.png',
   sadaka: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-T0LADPP4rW60qwVfZt87fcXjjuKezlq1iuLii3DmBrKe0hPIGly_S6c9EgXtjH6Y6A9kTzoGwmtcDiAGzvvY_dBjW5ACJ8d_olMOz0Z0AdfMfCsFj3zrtICwqWHRX9mV1GVXw8hh-T9K6faFC0juw-HIf3-GD9OgcTWtIq9zTe4_DTIYXgIdKCxp95gZ/s1600/Google%20Gemini%20Image%20%283%29.png', 
-  libre: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5Kl59pa_viQrnuxZiIB1Wh70RaGmMIlw9ZzENr_4Aa5oOXmeZcimAniCieYf10-GHzPhmPJ3lobrLQIkhQcEk-asjPdSMNGCKtBXKV_RHjUNfRdXakQWFtHIrjabBKHkCML9vfCQ_CTtTRfdM-Zhi6wMe5yf039pxTqOaQtJNwaCZonK4gZqusrza75IF/s1600/Gemini%20Generated%20Image%20%2821%29.png', 
-  iceshape: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
+  Alma: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHBcRygxz4BPQoIXjVWXJQHjXvfGQypN3WjcttgXjJJSGlyoFoE6MuLArRub-dB_a_japyk9vPqeFPA0_Jpx9Dt8N22elWcJNqigOgH41Oc6VCjMJTXTlqhix40dCrVCYyviiQA-V4oFWYQR7AE5VYu5Zc-mKTXNpWTVKDrBuvKwxYjuvgsrwieGP-d12L/s1600/Gemini%20Generated%20Image%20%2816%29.png', 
+  final: 'https://m.media-amazon.com/images/I/71vScIpAGRL.jpg',
 };
 
 // 🎵 قائمة الأغاني (Playlist)
@@ -104,7 +104,7 @@ const EXAMS_DATA = [
     date: '2026-01-15',
     displayDate: '15 يناير',
     subject: 'Quality Control',
-    giftName: 'YSL libre',
+    giftName: 'Nail Care Kit',
     totalPieces: 3,
     codes: ['polish', 'care', 'shine'],
     imageUrl: GIFT_IMAGES.nailcare,
@@ -116,10 +116,10 @@ const EXAMS_DATA = [
     date: '2026-01-20',
     displayDate: '20 يناير',
     subject: 'Medical Micro ',
-    giftName: 'Nail Care Kit',
+    giftName: 'Alma & Co Gift Card',
     totalPieces: 4, // المادة الوحش
-    codes: ['notes', 'three', 'vanilla', 'libre'],
-    imageUrl: GIFT_IMAGES.libre,
+    codes: ['let', 'her', 'Choose', 'it'],
+    imageUrl: GIFT_IMAGES.alma,
     description: 'عشان تدلعي نفسك بعد التعب ده كله 🥳',
     gameType: 'shooter' // لسة محتاجة تطلع غلها
   },
@@ -128,12 +128,12 @@ const EXAMS_DATA = [
     date: '2026-01-22',
     displayDate: '22 يناير',
     subject: 'Drug Marketing ',
-    giftName: 'Ice Shapes',
+    giftName: 'مفيش مكآفأة اكتر من اننا خلصنا امتحانات الصراحة 🥳😂',
     totalPieces: 2,
     codes: ['freedom', 'coffe'],
-    imageUrl: GIFT_IMAGES.iceshape,
+    imageUrl: GIFT_IMAGES.final,
     isBigGift: true,
-    description: 'مبروك التخرج من الترم!, لازم تحتفلي ب ايس كوفي بقي 🎉',
+    description: 'مبروك التخرج من الترم! 🎉',
     gameType: 'catcher'
   }
 ];
